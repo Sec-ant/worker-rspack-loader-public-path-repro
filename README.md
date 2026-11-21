@@ -12,7 +12,12 @@ asset URL points at an unrelated origin. The worker rule explicitly sets
   `https://static.example.invalid/assets/echo.js`.
 - With the fix, the worker loads from `/workers/echo.js` and the page shows `pong`.
 
-To compare the same reproduction with a local build, run `pnpm install --frozen-lockfile`,
-`pnpm run build` and `npm pack` in the loader's `fix/worker-public-path`
-checkout. In this reproduction, run `npm install --no-save --package-lock=false
-/path/to/worker-rspack-loader-3.1.5.tgz` and restart the dev server.
+To try the [loader fix](https://github.com/Sec-ant/worker-rspack-loader/tree/fix/worker-public-path),
+check out that branch and run `pnpm install --frozen-lockfile`, `pnpm run build`,
+and `npm pack`. Stop the reproduction server, then run the following commands
+in this repository, using the path to the tarball you just built.
+
+```sh
+npm install --no-save --package-lock=false /path/to/worker-rspack-loader-3.1.5.tgz
+npm start
+```
