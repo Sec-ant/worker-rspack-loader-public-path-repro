@@ -1,0 +1,11 @@
+{
+  "name": "worker-public-path-repro",
+  "private": true,
+  "scripts": { "start": "rspack serve" },
+  "devDependencies": {
+    "@rspack/cli": "2.3.2",
+    "@rspack/core": "2.3.2",
+    "@rspack/dev-server": "2.2.2",
+    "worker-rspack-loader": "3.1.5"
+  }
+}
